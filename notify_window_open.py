@@ -19,5 +19,5 @@ for entity_id in entities:
 		open_windows.append(entity.attributes['friendly_name'])
 
 if open_windows:
-	message = message.format(windows="".join(open_windows))		
+	message = message.format(windows=", ".join(open_windows))		
 	hass.services.call('notify', 'home_group', {"message":message}, False)
