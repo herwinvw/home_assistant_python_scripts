@@ -6,16 +6,16 @@ toggle_dim:
       example: light.bedroom
     dimmed_brightness:
       description: the brightness of the light when dimmer, default is 5.
-			example: 5
-		undimmed_brightness:
-			description: undimmed brightness of the light entity, default is 255
-			example: 255
+      example: 5
+    undimmed_brightness:
+      description: undimmed brightness of the light entity, default is 255
+      example: 255
 notify_window_open:
-	description: Notifies notify.home_group of any open windows
-	fields:
-		group: 
-			description: group that contains the windows to notify for, default is group.windows
-			example: group.windows
-		message: 
-			description: "message template for the notification, use {windows} to list the open windows inside the message. Default: 'Windows in {windows} are open.'"
-			example: "Open windows: {windows}"
+  description: Notifies notify.home_group of any open windows
+  fields:
+    group: 
+      description: group that contains the windows to notify for, default is group.windows
+      example: group.windows
+    message: 
+      description: "message template for the notification, use {windows} to list the open windows inside the message. Default: 'Windows in {windows} are open.'"
+      example: "Open windows: {windows}"
