@@ -1,0 +1,11 @@
+toggle_dim:
+	description: Flip a light from undimmed to dimmed or vice-versa. If the light was turned off, it will first flip to undimmed brightness.
+  fields:
+    entity_id:
+      description: The light that toggled.
+      example: light.bedroom
+    dimmed_brightness:
+      description: the brightness of the light when dimmer, default is 5.
+			example: 5
+		undimmed_brightness:
+			description: undimmed brightness of the light entity, default is 255
