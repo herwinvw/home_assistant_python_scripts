@@ -1,5 +1,5 @@
 toggle_dim:
-	description: Flip a light from undimmed to dimmed or vice-versa. If the light was turned off, it will first flip to undimmed brightness.
+  description: Flip a light from undimmed to dimmed or vice-versa. If the light was turned off, it will first flip to undimmed brightness.
   fields:
     entity_id:
       description: The light that toggled.
