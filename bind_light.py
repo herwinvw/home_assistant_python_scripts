@@ -22,12 +22,13 @@ on_event = data.get('on_event',1002)
 off_event = data.get('off_event',4002)
 dim_event = data.get('dim_event',3001)
 undim_event = data.get('undim_event',2001)
+state = hass.states.get(entity_id)
 
 service_data = {'entity_id': entity_id}
 if event == on_event:
-    hass.services.call('light', 'turn_off', service_data, False)
-elif event == off_event:
     hass.services.call('light', 'turn_on', service_data, False)
+elif event == off_event:
+    hass.services.call('light', 'turn_off', service_data, False)
 elif event == dim_event and state.state == 'on':
     service_data['brightness_step_pct'] = -5
     hass.services.call('light', 'turn_on', service_data, False)    
