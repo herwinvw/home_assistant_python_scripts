@@ -18,20 +18,19 @@ undim_event: integer, optional
 """
 entity_id = data.get('entity_id')
 event = int(data.get('event'))
-on_event = data.get('on_event',1002)
-off_event = data.get('off_event',4002)
-dim_event = data.get('dim_event',3001)
-undim_event = data.get('undim_event',2001)
-state = hass.states.get(entity_id)
+on_events = data.get('on_event',[1002])
+off_events = data.get('off_event',[4002])
+dim_events = data.get('dim_events',[3001, 3002])
+undim_events = data.get('undim_events',[2001, 2002])
 
 service_data = {'entity_id': entity_id}
-if event == on_event:
+if event in on_events:
     hass.services.call('light', 'turn_on', service_data, False)
-elif event == off_event:
+elif event in off_events:
     hass.services.call('light', 'turn_off', service_data, False)
-elif event == dim_event and state.state == 'on':
+elif event in dim_events:
     service_data['brightness_step_pct'] = -5
     hass.services.call('light', 'turn_on', service_data, False)    
-elif event == undim_event and state.state == 'on':
+elif event in undim_events:
     service_data['brightness_step_pct'] = 5
     hass.services.call('light', 'turn_on', service_data, False)
