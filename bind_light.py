@@ -17,7 +17,7 @@ undim_event: integer, optional
     undim_button event (default: 2001)
 """
 entity_id = data.get('entity_id')
-event = data.get('event')
+event = int(data.get('event'))
 on_event = data.get('on_event',1002)
 off_event = data.get('off_event',4002)
 dim_event = data.get('dim_event',3001)
