@@ -10,6 +10,30 @@ toggle_dim:
     undimmed_brightness:
       description: undimmed brightness of the light entity, default is 255
       example: 255
+bind_light:
+  description: Binds a dimmer to a light, providing on/off and dimming functionality
+  fields:
+    entity_id:
+      description: The light to bind the dimmer to
+      example: light.bedroom
+    event:
+      description: The dimmer event
+      example: 4002
+    on_events:
+      description: "List of event that turns on the light, default is [1002]"
+      example: [1002]
+    off_events:
+      description: "List of events that turn of the light, default is [4002]"
+      example: [4002]
+    dim_events:
+      description: "List of events to dim the light, default is [3001, 3002]"
+      example: [3001, 3002]
+    undim_events:
+      description: "List of events to undim the light, default is [2001, 2002]"
+      example: [2001, 2002]
+    step_pct:
+      description: "Dim step size in percent, default is 5"
+      example: 5      
 notify_window_open:
   description: Notifies notify.home_group of any open windows
   fields:
@@ -19,3 +43,9 @@ notify_window_open:
     message: 
       description: "message template for the notification, use {windows} to list the open windows inside the message. Default: 'Windows in {windows} are open.'"
       example: "Open windows: {windows}"
+ notify_water_leak:
+  description: notifies notify.home_group of any water leaks
+  fields:
+    group:
+      description: "group that contains waterleak sensors, default: group.water_leak"
+      example: group.waterleak
