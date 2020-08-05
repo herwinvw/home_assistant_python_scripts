@@ -43,7 +43,7 @@ notify_window_open:
     message: 
       description: "message template for the notification, use {windows} to list the open windows inside the message. Default: 'Windows in {windows} are open.'"
       example: "Open windows: {windows}"
- notify_water_leak:
+notify_water_leak:
   description: notifies notify.home_group of any water leaks
   fields:
     group:
